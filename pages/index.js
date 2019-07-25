@@ -2,6 +2,42 @@ import Layout from '../components/MyLayout.js';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from 'react-apollo';
+import gql from "graphql-tag";
+
+
+const client = new ApolloClient({
+  uri: 'https://api.github.com/graphql',
+  request: operation => {
+    operation.setContext({
+      headers: {
+        authorization: `Bearer ${
+          process.env.GITHUB_PERSONAL_ACCESS_TOKEN
+        }`
+      }
+    });
+  }
+});
+
+const GET_REPO_INFO = gql`
+{
+  organization(login: "apollographql") {
+    repositories(first: 5) {
+      nodes {
+        id
+        name
+        url
+        viewerHasStarred
+        stargazers {
+          totalCount
+        }
+      }
+    }
+  }
+}
+`
+
 const Index = props => (
   <Layout>
     <h1>Batman TV Shows</h1>
@@ -18,11 +54,16 @@ const Index = props => (
 );
 
 Index.getInitialProps = async function() {
+//  console.log(`Show data fetched. Count: ${data.length}`);
+client
+.query({
+  query: GET_REPO_INFO
+})
+.then(result => console.log(result));
+
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
   const data = await res.json();
-
-  console.log(`Show data fetched. Count: ${data.length}`);
-
+  
   return {
     shows: data.map(entry => entry.show)
   };
