@@ -9,7 +9,7 @@ const Header = () => (
       <a className="link">About</a>
     </Link>
     <style jsx>{`
-a.link {
+a {
   margin-right: 15px;
 }
   `}</style>
