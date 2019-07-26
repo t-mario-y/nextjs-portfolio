@@ -1,6 +1,5 @@
 import Layout from '../components/MyLayout.js';
-import Link from 'next/link';
-import fetch from 'isomorphic-unfetch';
+import RepositoryCard from '../components/RepositoryCard';
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
@@ -46,12 +45,11 @@ const RepoList = () => (
         if (loading) return <p>Loading...</p>;
 
         const repositories = data.user.repositories.nodes;
-
         return (
           <ul>
             {repositories.map(repo => (
               <li key={repo.id}>
-                <a href={repo.url}>{repo.name}</a>
+                <RepositoryCard repo={repo}/>
               </li>
             ))}
           </ul>
