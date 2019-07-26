@@ -4,6 +4,7 @@ import fetch from 'isomorphic-unfetch';
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
+import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
 
@@ -22,19 +23,20 @@ const client = new ApolloClient({
 
 const GET_REPO_INFO = gql`
 {
-  organization(login: "apollographql") {
-    repositories(first: 5) {
-      nodes {
-        id
-        name
-        url
-        viewerHasStarred
-        stargazers {
-          totalCount
+  user(login: "t-mario-y") {
+  	repositories(first: 50, privacy: PUBLIC) {
+    	nodes{
+      	name
+      	url
+        isFork
+        description
+				primaryLanguage{
+          color
+          name
         }
-      }
-    }
-  }
+    	}
+  	}
+	}
 }
 `
 
@@ -59,7 +61,7 @@ client
 .query({
   query: GET_REPO_INFO
 })
-.then(result => console.log(result));
+.then(result => console.log(result.data.user.repositories.nodes));
 
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
   const data = await res.json();
