@@ -24,51 +24,48 @@ const client = new ApolloClient({
 const GET_REPO_INFO = gql`
 {
   user(login: "t-mario-y") {
-  	repositories(first: 50, privacy: PUBLIC) {
-    	nodes{
-      	name
-      	url
-        isFork
+    repositories(first: 50, privacy: PUBLIC) {
+      nodes{
+        id
+        name
+        url
         description
-				primaryLanguage{
+        primaryLanguage{
           color
           name
         }
-    	}
-  	}
-	}
+      }
+    }
+  }
 }
 `
+const RepoList = () => (
+  <ApolloProvider client={client}>
+    <Query query={GET_REPO_INFO}>
+      {({ loading, data }) => {
+        if (loading) return <p>Loading...</p>;
 
-const Index = props => (
-  <Layout>
-    <h1>Batman TV Shows</h1>
-    <ul>
-      {props.shows.map(show => (
-        <li key={show.id}>
-          <Link href="/p/[id]" as={`/p/${show.id}`}>
-            <a>{show.name}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </Layout>
+        const repositories = data.user.repositories.nodes;
+
+        return (
+          <ul>
+            {repositories.map(repo => (
+              <li key={repo.id}>
+                <a href={repo.url}>{repo.name}</a>
+              </li>
+            ))}
+          </ul>
+        );
+      }}
+    </Query>
+  </ApolloProvider>
 );
 
-Index.getInitialProps = async function() {
-//  console.log(`Show data fetched. Count: ${data.length}`);
-client
-.query({
-  query: GET_REPO_INFO
-})
-.then(result => console.log(result.data.user.repositories.nodes));
-
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-  const data = await res.json();
-  
-  return {
-    shows: data.map(entry => entry.show)
-  };
-};
+const Index = () => (
+  <Layout>
+    <h1>My Repos.</h1>
+    <RepoList/>
+  </Layout>
+);
 
 export default Index;
