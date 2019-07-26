@@ -1,13 +1,14 @@
 import Layout from '../components/MyLayout.js';
 import RepositoryCard from '../components/RepositoryCard';
 
+import fetch from 'isomorphic-unfetch';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
-
 const client = new ApolloClient({
+  fetch: fetch,
   uri: 'https://api.github.com/graphql',
   request: operation => {
     operation.setContext({
