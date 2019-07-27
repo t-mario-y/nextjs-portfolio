@@ -13,6 +13,9 @@ const repositoryCardStyles = makeStyles({
   title: {
     fontSize: 13,
   },
+  repoLinkButton: {
+    textTransform: 'none',
+  }
 });
 const languageChipStyles = makeStyles(theme => ({
   chip: {
@@ -22,8 +25,9 @@ const languageChipStyles = makeStyles(theme => ({
 
 const LanguageChip = ({ language }) => {
   const classes = languageChipStyles();
+  const color = language === "none" ? "" : "primary";
   return (
-    <Chip size="small" color="primary" label={language} className={classes.chip} />
+    <Chip size="small" color={color} label={language} className={classes.chip} />
   );
 };
 
@@ -39,13 +43,11 @@ const RepositoryCard = ({ repo }) => {
         <Typography variant="body2" component="p">
           {repo.description}
         </Typography>
-        <Typography variant="body2" component="p">
-          language:{lang}
-        </Typography>
       </CardContent>
       <CardActions>
+        <LanguageChip language={lang}/>
         <a href={repo.url} target="#">
-          <Button size="small">Jump to repo</Button>
+          <Button className={classes.repoLinkButton} size="small">Jump to repo</Button>
         </a>
       </CardActions>
     </Card>
