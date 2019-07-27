@@ -4,22 +4,32 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
 
-const useStyles = makeStyles({
+const repositoryCardStyles = makeStyles({
   card: {
-    minWidth: 275,
-    maxWidth: 320
+    minWidth: 275
   },
   title: {
-    fontSize: 14,
+    fontSize: 13,
   },
 });
+const languageChipStyles = makeStyles(theme => ({
+  chip: {
+    margin: theme.spacing(1),
+  },
+}));
+
+const LanguageChip = ({ language }) => {
+  const classes = languageChipStyles();
+  return (
+    <Chip size="small" color="primary" label={language} className={classes.chip} />
+  );
+};
 
 const RepositoryCard = ({ repo }) => {
-  const classes = useStyles();
-  //console.log(repo.primaryLanguage);
-  //const lang = repo.primaryLanguage.name;
-  const lang = repo.primaryLanguage === null ? "": repo.primaryLanguage.name;
+  const classes = repositoryCardStyles();
+  const lang = repo.primaryLanguage === null ? "none": repo.primaryLanguage.name;
   return (
     <Card className={classes.card}>
       <CardContent>

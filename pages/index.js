@@ -1,5 +1,6 @@
 import Layout from '../components/MyLayout.js';
 import RepositoryCard from '../components/RepositoryCard';
+import Album from '../components/Albums';
 
 import fetch from 'isomorphic-unfetch';
 import ApolloClient from "apollo-boost";
@@ -24,7 +25,7 @@ const client = new ApolloClient({
 const GET_REPO_INFO = gql`
 {
   user(login: "t-mario-y") {
-    repositories(first: 50, privacy: PUBLIC) {
+    repositories(first: 50, privacy: PUBLIC, isFork: false) {
       nodes{
         id
         name
@@ -44,16 +45,9 @@ const RepoList = () => (
     <Query query={GET_REPO_INFO}>
       {({ loading, data }) => {
         if (loading) return <p>Loading...</p>;
-
         const repositories = data.user.repositories.nodes;
         return (
-          <ul>
-            {repositories.map(repo => (
-              <li key={repo.id}>
-                <RepositoryCard repo={repo}/>
-              </li>
-            ))}
-          </ul>
+          <Album repositories ={repositories} />
         );
       }}
     </Query>
