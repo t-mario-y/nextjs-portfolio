@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import RepositoryCard from './RepositoryCard'
 
-const useStyles = makeStyles(theme => ({
+const albumStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(1),
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Album = ({repositories}) => {
-  const classes = useStyles();
+  const classes = albumStyles();
   return (
     <Container className={classes.cardGrid} maxWidth="lg">
       <Grid container spacing={3}>

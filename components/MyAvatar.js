@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles({
+const myAvatarStyles = makeStyles({
   avatar: {
     margin: 10,
     width: 250,
@@ -11,8 +11,7 @@ const useStyles = makeStyles({
 });
 
 const MyAvatar = () => {
-  const classes = useStyles();
-
+  const classes = myAvatarStyles();
   return (
     <Grid container justify="center" alignItems="center">
       <Avatar alt="t-mario-y" src="/static/avator.png" className={classes.avatar} />

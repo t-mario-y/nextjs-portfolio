@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
+const profilePageStyles = makeStyles(theme => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Profile = () => {
-  const classes = useStyles();
+  const classes = profilePageStyles();
   return (
     <MyLayout>
       <Container maxWidth="xl" className={classes.heroContent}>

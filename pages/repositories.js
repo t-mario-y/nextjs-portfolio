@@ -46,7 +46,9 @@ const RepoList = () => (
   <ApolloProvider client={client}>
     <Query query={GET_REPO_INFO}>
       {({ loading, data }) => {
-        if (loading) return <p>Loading...</p>;
+        if (loading){
+          return (<p>Loading...</p>);
+        }
         const repositories = data.user.repositories.nodes;
         return (
           <Album repositories ={repositories} />
