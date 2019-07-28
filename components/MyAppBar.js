@@ -28,7 +28,7 @@ const MyAppBar = () => {
     <AppBar position="fixed" color="default" elevation={0} className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-          t-mario-y portfolio
+          <Link color="textPrimary" href="/">t-mario-y portfolio</Link>
         </Typography>
         <nav>
           <Link variant="button" color="textPrimary" href="/profile" className={classes.link}>
@@ -43,7 +43,6 @@ const MyAppBar = () => {
         </nav>
       </Toolbar>
     </AppBar>
-  );
-}
+)};
 
 export default MyAppBar;

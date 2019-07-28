@@ -1,5 +1,5 @@
 import MyLayout from '../components/MyLayout';
-
+import MyAvator from '../components/MyAvator';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -15,8 +15,9 @@ const Index = () => {
   return (
     <MyLayout>
       <Container maxWidth="xl" component="main" className={classes.heroContent}>{/* "repository page" contents start */}
-        <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
-          Welcome! here is t-mario-y portofolio page.
+        <MyAvator/>
+        <Typography component="h6" variant="h6" align="center" color="textPrimary" gutterBottom>
+          Web App Engineer / Vocal Bass Player
         </Typography>
       </Container>
     </MyLayout>

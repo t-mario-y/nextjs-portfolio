@@ -14,7 +14,7 @@ const Skills = () => {
   const classes = useStyles();
   return (
     <MyLayout>
-      <Container maxWidth="xl" component="main" className={classes.heroContent}>{/* "repository page" contents start */}
+      <Container maxWidth="xl" component="main" className={classes.heroContent}>
         <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
           Here are skills.
         </Typography>
