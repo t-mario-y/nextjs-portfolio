@@ -2,12 +2,12 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-import RepositoryCard from '../components/RepositoryCard'
+import RepositoryCard from './RepositoryCard'
 
 const useStyles = makeStyles(theme => ({
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
   card: {
     height: '100%',

@@ -1,21 +1,27 @@
-import Header from './Header';
+import MyAppBar from './MyAppBar';
+
 import { Fragment } from 'react';
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
 
-//外枠をlayoutStyleで囲い、上部に<Header/>を置いて、{props.children} を表示するだけ
-const Layout = props => (
+// ページヘッダ(App Bar)、コンテンツ(Contanier)の枠組みを共通化する
+const useStyles = makeStyles(theme => ({
+  heroContent: {
+    padding: theme.spacing(8, 0, 6),
+  },
+}));
+
+const MyLayout = props => {
+  const classes = useStyles();
+  return (
   <Fragment>
-    <div>
-      <Header />
+    <MyAppBar />
+    {/* Hero unit */}
+    <Container maxWidth="xl" component="main" className={classes.heroContent}>
       {props.children}
-    </div>
-    <style jsx>{`
-div {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #DDD;
-}
-    `}</style>
+    </Container>
+    {/* End hero unit */}
   </Fragment>
-);
+)};
 
-export default Layout;
+export default MyLayout;

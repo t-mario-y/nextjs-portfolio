@@ -1,6 +1,5 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
@@ -32,13 +31,13 @@ const MyAppBar = () => {
           t-mario-y portfolio
         </Typography>
         <nav>
-          <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+          <Link variant="button" color="textPrimary" href="/profile" className={classes.link}>
             Profile
           </Link>
-          <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+          <Link variant="button" color="textPrimary" href="/skills" className={classes.link}>
             Skills
           </Link>
-          <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+          <Link variant="button" color="textPrimary" href="/repositories" className={classes.link}>
             GitHub
           </Link>
         </nav>
