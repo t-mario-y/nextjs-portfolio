@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Prifile = () => {
+const Profile = () => {
   const classes = useStyles();
   return (
     <MyLayout>
@@ -152,4 +152,4 @@ const Prifile = () => {
     </MyLayout>
 )};
 
-export default Prifile;
+export default Profile;
