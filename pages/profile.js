@@ -31,7 +31,7 @@ const WorkSection = ({workObj}) => {
         業務内容
       </Typography>
       {workObj.about.map(line => (
-        <Typography component="p" variant="body1" gutterBottom>
+        <Typography key={line} component="p" variant="body1" gutterBottom>
           {line}
         </Typography>
       ))}
@@ -39,7 +39,7 @@ const WorkSection = ({workObj}) => {
         技術スタック
       </Typography>
       {workObj.techStuck.map(tech => (
-        <Typography component="p" variant="body1" gutterBottom>
+        <Typography key={tech} component="p" variant="body1" gutterBottom>
           - {tech}
         </Typography>
       ))}
@@ -47,7 +47,7 @@ const WorkSection = ({workObj}) => {
         職位
       </Typography>
       {workObj.team.map(line => (
-        <Typography component="p" variant="body1" gutterBottom>
+        <Typography key={line} component="p" variant="body1" gutterBottom>
           {line}
         </Typography>
       ))}
@@ -68,7 +68,7 @@ const Profile = () => {
         </Typography>
       </Container>
       {works.map(work => (
-        <WorkSection workObj={work}/>
+        <WorkSection key={work} workObj={work}/>
       ))}
     </MyLayout>
 )};

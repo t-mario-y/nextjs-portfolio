@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "XXX"
+    }
+  }
+}
