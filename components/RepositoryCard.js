@@ -25,7 +25,7 @@ const languageChipStyles = makeStyles(theme => ({
 
 const LanguageChip = ({ language }) => {
   const classes = languageChipStyles();
-  const color = language === "none" ? "" : "primary";
+  const color = language === "none" ? "secondary" : "primary";
   return (
     <Chip size="small" color={color} label={language} className={classes.chip} />
   );
