@@ -17,6 +17,7 @@ const repositoryCardStyles = makeStyles({
     textTransform: 'none',
   }
 });
+
 const languageChipStyles = makeStyles(theme => ({
   chip: {
     margin: theme.spacing(1),
@@ -47,7 +48,7 @@ const RepositoryCard = ({ repo }) => {
       <CardActions>
         <LanguageChip language={lang}/>
         <a href={repo.url} target="#">
-          <Button className={classes.repoLinkButton} size="small">Jump to repo</Button>
+          <Button className={classes.repoLinkButton} size="small">Jump to Repo</Button>
         </a>
       </CardActions>
     </Card>

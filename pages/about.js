@@ -1,11 +1,13 @@
-import Layout from '../components/MyLayout.js';
+import { Fragment } from 'react';
 
 const About = () => (
-  <div>
-    <Layout>
-      <p>This is the about page.</p>
-    </Layout>
-  </div>
+  <Fragment>
+    <Container maxWidth="sm" component="main" className={classes.heroContent}>
+    <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
+      Here is about page.
+    </Typography>
+    </Container>
+  </Fragment>
 );
 
 export default About;

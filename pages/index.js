@@ -1,11 +1,14 @@
-import Layout from '../components/MyLayout.js';
 import Album from '../components/Albums';
-
+import MyAppBar from '../components/MyAppBar';
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
 import fetch from 'isomorphic-unfetch';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import { Fragment } from 'react';
+import Typography from '@material-ui/core/Typography';
 
 const client = new ApolloClient({
   fetch: fetch,
@@ -53,11 +56,28 @@ const RepoList = () => (
   </ApolloProvider>
 );
 
-const Index = () => (
-  <Layout>
-    <h1>My Repos.</h1>
-    <RepoList/>
-  </Layout>
-);
+const useStyles = makeStyles(theme => ({
+  heroContent: {
+    padding: theme.spacing(8, 0, 6),
+  },
+}));
+
+const Index = () => {
+  const classes = useStyles();
+  return (
+  <Fragment>
+    <MyAppBar />
+    {/* Hero unit */}
+    <Container maxWidth="xl" component="main" className={classes.heroContent}>
+      <Container maxWidth="sm" component="main" className={classes.heroContent}>
+        <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
+          My GitHub Repositories
+        </Typography>
+      </Container>
+      <RepoList/>
+    </Container>
+    {/* End hero unit */}
+  </Fragment>
+)};
 
 export default Index;
