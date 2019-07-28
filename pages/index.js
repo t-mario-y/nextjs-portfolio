@@ -1,5 +1,4 @@
 import Layout from '../components/MyLayout.js';
-import RepositoryCard from '../components/RepositoryCard';
 import Album from '../components/Albums';
 
 import fetch from 'isomorphic-unfetch';
