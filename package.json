@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-how-to-develop",
+  "name": "nextjs-portfolio",
   "version": "1.0.0",
-  "description": "Next.js 勉強用その2",
+  "description": "t-mario-y Portfolio Site with Next.js",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/t-mario-y/nextjs-how-to-develop.git"
+    "url": "git+https://github.com/t-mario-y/nextjs-portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/t-mario-y/nextjs-how-to-develop/issues"
+    "url": "https://github.com/t-mario-y/nextjs-portfolio.git/issues"
   },
-  "homepage": "https://github.com/t-mario-y/nextjs-how-to-develop#readme",
+  "homepage": "https://github.com/t-mario-y/nextjs-portfolio.git#readme",
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "@material-ui/styles": "^4.2.1",
