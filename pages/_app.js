@@ -20,7 +20,7 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <title>t-mario-y</title>
+          <title>t-mario-y portfolio</title>
         </Head>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
