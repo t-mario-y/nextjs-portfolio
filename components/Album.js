@@ -19,17 +19,15 @@ const useStyles = makeStyles(theme => ({
 const Album = ({repositories}) => {
   const classes = useStyles();
   return (
-    <main>
-      <Container className={classes.cardGrid} maxWidth="xl">
-        <Grid container spacing={3}>
-          {repositories.map(repo => (
-            <Grid item key={repo.id} xs={12} sm={6} md={4}>
-              <RepositoryCard repo={repo}/>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </main>
+    <Container className={classes.cardGrid} maxWidth="lg">
+      <Grid container spacing={3}>
+        {repositories.map(repo => (
+          <Grid item key={repo.id} xs={12} sm={6} md={4}>
+            <RepositoryCard repo={repo}/>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 }
 

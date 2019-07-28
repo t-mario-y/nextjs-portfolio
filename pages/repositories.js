@@ -66,12 +66,12 @@ const Repositories = () => {
   const classes = useStyles();
   return (
     <MyLayout>
-      <Container maxWidth="xl" component="main" className={classes.heroContent}>{/* "repository page" contents start */}
+      <Container maxWidth="xl" className={classes.heroContent}>
         <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
           GitHub Repository Links
         </Typography>
       </Container>
-      <RepoList/>{/* "repository page" contents ends*/}
+      <RepoList/>
     </MyLayout>
 )};
 

@@ -14,7 +14,7 @@ const Index = () => {
   const classes = useStyles();
   return (
     <MyLayout>
-      <Container maxWidth="xl" component="main" className={classes.heroContent}>{/* "repository page" contents start */}
+      <Container maxWidth="lg" className={classes.heroContent}>
         <MyAvator/>
         <Typography component="h6" variant="h6" align="center" color="textPrimary" gutterBottom>
           Web App Engineer / Vocal Bass Player
