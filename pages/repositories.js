@@ -1,14 +1,13 @@
 import Album from '../components/Album';
 import MyLayout from '../components/MyLayout';
-
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import fetch from 'isomorphic-unfetch';
+import Typography from '@material-ui/core/Typography';
 import ApolloClient from "apollo-boost";
+import gql from "graphql-tag";
+import fetch from 'isomorphic-unfetch';
 import { ApolloProvider } from 'react-apollo';
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
-import Typography from '@material-ui/core/Typography';
 
 const client = new ApolloClient({
   fetch: fetch,
