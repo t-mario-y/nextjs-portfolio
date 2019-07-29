@@ -44,7 +44,6 @@ npm run dev
 //nowデプロイ
 now
 ```
-Now側でGitHub連携すれば、master pushトリガーでの自動デプロイも走って便利です。
 ほぼゼロコンフィグで行けますが、GitHub APIアクセストークンを秘匿するためには少し設定が必要です。  
- - 開発ビルドに際しては dotenv-webpackを使用して.envから読み込みます。
- - ステージング環境ビルドは、now.jsonを使用します。
+ - development buildは、dotenv-webpackを使用して.envから読み込みます。
+ - staging buildは、now.jsonを使用します。

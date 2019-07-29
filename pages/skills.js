@@ -24,66 +24,52 @@ const skillPageStyles = makeStyles(theme => ({
 
 const level3List = [
   {
-    name: "Java",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "Java"
   },
   {
-    name: "JavaScript",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "JavaScript"
   },
   {
-    name: "jQuery",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "jQuery"
   },
   {
-    name: "Oracle DB",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "Oracle DB"
   }
 ];
 
 const level2List = [
   {
-    name: "Seasar2",
-    logoSrc: "/static/jquery-logo.jpg"
+    name: "Seasar2"
   },
   {
-    name: "Vue.js",
-    logoSrc: "/static/jquery-logo.jpg"
+    name: "Vue.js"
   },
   {
-    name: "CSS",
-    logoSrc: "/static/jquery-logo.jpg"
+    name: "CSS"
   },
   {
-    name: "BootStrap",
-    logoSrc: "/static/jquery-logo.jpg"
+    name: "BootStrap"
   },
   {
-    name: "PowerShell",
-    logoSrc: "/static/jquery-logo.jpg"
+    name: "PowerShell"
   }
 ];
 
 const level1List = [
   {
-    name: "React",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "React"
   },
   {
-    name: "Next.js",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "Next.js"
   },
   {
-    name: "Google Apps Script",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "Google Apps Script"
   },
   {
-    name: "Spring Boot",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "Spring Boot"
   },
   {
-    name: "Progressive Web Apps",
-    logoSrc: "/static/vuejs-logo.jpg"
+    name: "Progressive Web Apps"
   }
 ];
 
