@@ -23,7 +23,7 @@ const Album = ({repositories}) => {
       <Grid container spacing={3}>
         {repositories.map(repo => (
           <Grid item key={repo.id} xs={12} sm={6} md={4}>
-            <RepositoryCard repo={repo}/>
+            <RepositoryCard repository={repo}/>
           </Grid>
         ))}
       </Grid>

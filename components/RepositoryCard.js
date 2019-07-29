@@ -2,9 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 
 const repositoryCardStyles = makeStyles({
   card: {
@@ -32,24 +32,22 @@ const LanguageChip = ({ language }) => {
   );
 };
 
-const RepositoryCard = ({ repo }) => {
+const RepositoryCard = ({ repository }) => {
   const classes = repositoryCardStyles();
-  const lang = repo.primaryLanguage === null ? "none": repo.primaryLanguage.name;
+  const lang = repository.primaryLanguage === null ? "none": repository.primaryLanguage.name;
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          {repo.name}
+          {repository.name}
         </Typography>
         <Typography variant="body2" component="p">
-          {repo.description}
+          {repository.description}
         </Typography>
       </CardContent>
       <CardActions>
         <LanguageChip language={lang}/>
-        <a href={repo.url} target="#">
-          <Button className={classes.repoLinkButton} size="small">Link to Repo</Button>
-        </a>
+        <Link href={repository.url} target="#" className={classes.repoLinkButton}>Link to Repo</Link>
       </CardActions>
     </Card>
   );
