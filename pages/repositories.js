@@ -42,7 +42,7 @@ const RepositoriesPage = () => {
           GitHub Repository
         </Typography>
       </Container>
-      <RepoList/>
+      <RepoList />
     </MyLayout>
 )};
 
