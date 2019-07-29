@@ -26,9 +26,11 @@ Next.jsはNowと連携しており、デプロイ先に悩まなくて済むの�
 
 ### GraphQL部分
 GitHub [GraphQL API Explorer](https://developer.github.com/v4/explorer/)でクエリを作成し、react-apolloで呼び出します。
-アクセストークンは、.envとnow.jsonの両方に記入します。
 ```
 git clone https://github.com/t-mario-y/nextjs-portfolio
+cd nextjs-portfolio
+touch .env
+touch now.json
 npm install
 npm run dev
 ```
@@ -43,4 +45,6 @@ npm run dev
 now
 ```
 Now側でGitHub連携すれば、master pushトリガーでの自動デプロイも走って便利です。
-ほぼゼロコンフィグで行けますが、アクセストークン回りを秘匿するためには少し設定が必要
+ほぼゼロコンフィグで行けますが、GitHub APIアクセストークンを秘匿するためには少し設定が必要です。  
+ - 開発ビルドに際しては dotenv-webpackを使用して.envから読み込みます。
+ - ステージング環境ビルドは、now.jsonを使用します。
