@@ -26,7 +26,7 @@ const client = new ApolloClient({
 const GET_REPO_INFO = gql`
 {
   user(login: "t-mario-y") {
-    repositories(first: 50, privacy: PUBLIC, isFork: false) {
+    repositories(first: 50, privacy: PUBLIC, isFork: false, orderBy: {field: CREATED_AT, direction: DESC}) {
       nodes{
         id
         name
@@ -72,7 +72,7 @@ const Repositories = () => {
     <MyLayout>
       <Container maxWidth="xl" className={classes.heroContent}>
         <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
-          GitHub Repository Links
+          GitHub Repository
         </Typography>
       </Container>
       <RepoList/>

@@ -48,7 +48,7 @@ const RepositoryCard = ({ repo }) => {
       <CardActions>
         <LanguageChip language={lang}/>
         <a href={repo.url} target="#">
-          <Button className={classes.repoLinkButton} size="small">Jump to Repo</Button>
+          <Button className={classes.repoLinkButton} size="small">Link to Repo</Button>
         </a>
       </CardActions>
     </Card>
