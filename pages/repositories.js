@@ -44,7 +44,10 @@ const GET_REPO_INFO = gql`
 const RepoList = () => (
   <ApolloProvider client={client}>
     <Query query={GET_REPO_INFO}>
-      {({ loading, data }) => {
+      {({ loading, error, data }) => {
+        if(error){
+          return (<p>GitHub API Access error!</p>);
+        }
         if (loading){
           return (<p>Loading...</p>);
         }
