@@ -64,8 +64,8 @@ const Career = () => {
           職務経歴
         </Typography>
       </Container>
-      {works.map(work => (
-        <WorkSection key={work.id} workObj={work}/>
+      {works.map((work, idx) => (
+        <WorkSection key={idx} workObj={work}/>
       ))}
     </MyLayout>
 )};

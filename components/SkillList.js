@@ -11,8 +11,8 @@ const SkillList = ({skillList}) => {
       <Grid item xs={12} md={12}>
         <Divider />
           <List dense={dense}>
-          {skillList.map((skill, i) => (
-            <React.Fragment key={i}>
+          {skillList.map((skill, idx) => (
+            <React.Fragment key={idx}>
               <ListItem>
                 <ListItemText primary={skill.name} />
               </ListItem>
