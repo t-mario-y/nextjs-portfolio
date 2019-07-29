@@ -28,7 +28,7 @@ const Profile = () => {
           Web App Engineer
         </Typography>
         <Typography component="p" variant="h6" gutterBottom>
-          2014-04~ 株式会社情報創研
+          2014年4月~ 株式会社情報創研
         </Typography>
         <Typography component="p" variant="h6" gutterBottom>
           <Link href="/career" className={classes.link}>
