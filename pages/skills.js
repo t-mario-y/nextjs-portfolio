@@ -79,7 +79,7 @@ const Skills = () => {
     <MyLayout>
       <Container maxWidth="xl" className={classes.heroContent}>
         <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
-          言語スキル
+          技術スキル
         </Typography>
       </Container>
       <Container maxWidth="lg" className={classes.textContent}>

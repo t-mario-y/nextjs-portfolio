@@ -33,6 +33,9 @@ const MyAppBar = () => {
           <Link variant="button" color="textPrimary" href="/profile" className={classes.link}>
             Profile
           </Link>
+          <Link variant="button" color="textPrimary" href="/career" className={classes.link}>
+            Career
+          </Link>
           <Link variant="button" color="textPrimary" href="/skills" className={classes.link}>
             Skills
           </Link>
