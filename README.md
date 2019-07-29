@@ -22,8 +22,11 @@ GatsbyかNext.jsで迷ったが、[ちょうど7月にNext.js 9が出ていて](
 Next.jsはNowと連携しており、デプロイ先に悩まなくて済むのもメリット。
 
 ## 各技術
+### Next.js
+
 ### GraphQL部分
-GitHub API v4(GraphQL)のアクセストークンを .env に定義します。
+GitHub [GraphQL API Explorer](https://developer.github.com/v4/explorer/)でクエリを作成し、react-apolloで呼び出します。
+アクセストークンは、.envとnow.jsonの両方に記入します。
 ```
 git clone https://github.com/t-mario-y/nextjs-portfolio
 npm install
@@ -33,5 +36,11 @@ npm run dev
 ### UI Components部分
 
 ### build & deploy
-
-## ハマりどころ
+```
+//開発環境立ち上げ
+npm run dev
+//nowデプロイ
+now
+```
+Now側でGitHub連携すれば、master pushトリガーでの自動デプロイも走って便利です。
+ほぼゼロコンフィグで行けますが、アクセストークン回りを秘匿するためには少し設定が必要

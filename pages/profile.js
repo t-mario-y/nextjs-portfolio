@@ -63,12 +63,12 @@ const Profile = () => {
         <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
           友井 義明 / t-mario-y
         </Typography>
-        <Typography component="h2" variant="h4" align="center"　gutterBottom>
+        <Typography component="h2" variant="h4" align="center" gutterBottom>
           職務経歴
         </Typography>
       </Container>
       {works.map(work => (
-        <WorkSection key={work} workObj={work}/>
+        <WorkSection key={work.id} workObj={work}/>
       ))}
     </MyLayout>
 )};

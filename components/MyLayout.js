@@ -1,5 +1,4 @@
 import MyAppBar from './MyAppBar';
-import { Fragment } from 'react';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -13,12 +12,12 @@ const layoutStyles = makeStyles(theme => ({
 const MyLayout = props => {
   const classes = layoutStyles();
   return (
-  <Fragment>
+  <React.Fragment>
     <MyAppBar />
     <Container maxWidth="lg" className={classes.heroContent}>
       {props.children}
     </Container>
-  </Fragment>
+  </React.Fragment>
 )};
 
 export default MyLayout;
