@@ -1,4 +1,4 @@
-import Album from '../components/Album';
+import RepositoryCardAlbum from '../components/RepositoryCardAlbum';
 import MyLayout from '../components/MyLayout';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,7 +8,7 @@ import GET_REPO_INFO from '../lib/graphqlQuery';
 import { ApolloProvider } from 'react-apollo';
 import { Query } from "react-apollo";
 
-const useStyles = makeStyles(theme => ({
+const repositoriesPageStyles = makeStyles(theme => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
@@ -26,19 +26,19 @@ const RepoList = () => (
         }
         const repositories = data.user.repositories.nodes;
         return (
-          <Album repositories ={repositories} />
+          <RepositoryCardAlbum repositories ={repositories} />
         );
       }}
     </Query>
   </ApolloProvider>
 );
 
-const RepositoriesPage = () => {
-  const classes = useStyles();
+const Repositories = () => {
+  const classes = repositoriesPageStyles();
   return (
     <MyLayout>
-      <Container maxWidth="xl" className={classes.heroContent}>
-        <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
+      <Container maxWidth="lg" className={classes.heroContent}>
+        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
           GitHub Repository
         </Typography>
       </Container>
@@ -46,4 +46,4 @@ const RepositoriesPage = () => {
     </MyLayout>
 )};
 
-export default RepositoriesPage;
+export default Repositories;

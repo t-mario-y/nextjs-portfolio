@@ -29,12 +29,11 @@ const LanguageChip = ({ language }) => {
   const color = language === "none" ? "secondary" : "primary";
   return (
     <Chip size="small" color={color} label={language} className={classes.chip} />
-  );
-};
+)};
 
 const RepositoryCard = ({ repository }) => {
   const classes = repositoryCardStyles();
-  const lang = repository.primaryLanguage === null ? "none": repository.primaryLanguage.name;
+  const language = repository.primaryLanguage === null ? "none": repository.primaryLanguage.name;
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -46,11 +45,10 @@ const RepositoryCard = ({ repository }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <LanguageChip language={lang}/>
+        <LanguageChip language={language}/>
         <Link href={repository.url} target="#" className={classes.repoLinkButton}>Link to Repo</Link>
       </CardActions>
     </Card>
-  );
-}
+)};
 
 export default RepositoryCard;

@@ -17,37 +17,37 @@ const workSectionStyles = makeStyles(theme => ({
   }
 }));
 
-const WorkSection = ({workObj}) => {
+const WorkSection = ({ workObj }) => {
   const classes = workSectionStyles();
   return (
     <Container maxWidth="lg" className={classes.textContent}>
-      <Typography component="h3" variant="h6" gutterBottom>
+      <Typography variant="h6" component="h3" gutterBottom>
         期間
       </Typography>
-      <Typography component="p" variant="body1" gutterBottom>
+      <Typography variant="body1" component="p" gutterBottom>
         {workObj.duration}
       </Typography>
-      <Typography component="h3" variant="h6" gutterBottom>
+      <Typography variant="h6" component="h3" gutterBottom>
         業務内容
       </Typography>
       {workObj.about.map(line => (
-        <Typography key={line} component="p" variant="body1" gutterBottom>
+        <Typography key={line} variant="body1" component="p" gutterBottom>
           {line}
         </Typography>
       ))}
-      <Typography component="h3" variant="h6" gutterBottom>
+      <Typography variant="h6" component="h3" gutterBottom>
         技術スタック
       </Typography>
       {workObj.techStuck.map(tech => (
-        <Typography key={tech} component="p" variant="body1" gutterBottom>
+        <Typography key={tech} variant="body1" component="p" gutterBottom>
           - {tech}
         </Typography>
       ))}
-      <Typography component="h3" variant="h6" gutterBottom>
+      <Typography variant="h6" component="h3" gutterBottom>
         職位
       </Typography>
       {workObj.team.map(line => (
-        <Typography key={line} component="p" variant="body1" gutterBottom>
+        <Typography key={line} variant="body1" component="p" gutterBottom>
           {line}
         </Typography>
       ))}
@@ -59,8 +59,8 @@ const Career = () => {
   const classes = careerPageStyles();
   return (
     <MyLayout>
-      <Container maxWidth="xl" className={classes.heroContent}>
-        <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
+      <Container maxWidth="lg" className={classes.heroContent}>
+        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
           職務経歴
         </Typography>
       </Container>

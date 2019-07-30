@@ -77,8 +77,8 @@ const Skills = () => {
   const classes = skillPageStyles();
   return (
     <MyLayout>
-      <Container maxWidth="xl" className={classes.heroContent}>
-        <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom>
+      <Container maxWidth="lg" className={classes.heroContent}>
+        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
           技術スキル
         </Typography>
       </Container>
