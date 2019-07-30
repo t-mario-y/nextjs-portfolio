@@ -61,5 +61,6 @@ Media QueryもJavaScriptで実装するのが、初見では取っ付きづら�
 
 ## やり残したこと
  - Next.js 9でTypeScriptとの親和性がより上がったようだが、試せなかった。
+ - ディレクトリ構成および、Reactコンポーネントの分割は見よう見まねに留まっており、迷いがある。
  - Apollo Clientでクエリ取得結果をキャッシュしたかったが、[apollo-boostからのマイグレーション](https://www.apollographql.com/docs/react/advanced/boost-migration/)が大変で実現しなかった。
-   - サイトにアクセスしたときの応答速度が許容範囲に収まっているため。
+   - Chrome devToolsでのAuditsスコアが許容範囲に収まっていたので、公開には支障なしと判断した。
