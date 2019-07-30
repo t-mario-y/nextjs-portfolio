@@ -21,6 +21,7 @@ GitHub API v4(GraphQL)を使いつつも、SPAというよりはWebページと�
 Next.jsはNowと連携しており、デプロイ先に悩まなくて済むのもメリットだった。  
 
 ## ローカルでの始め方
+アクセストークンは.envに記述する
 ```
 git clone https://github.com/t-mario-y/nextjs-portfolio
 cd nextjs-portfolio
@@ -30,6 +31,7 @@ npm run dev
 ```
 
 ## nowへデプロイ
+アクセストークンはnow.jsonに記述する
 ```
 touch now.json
 now
