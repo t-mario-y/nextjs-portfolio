@@ -4,7 +4,7 @@ import CircularIndeterminate from '../components/CircularIntermediate';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import MyApolloClient from '../lib/complexApolloClient';
+import MyApolloClient from '../lib/simpleApolloClient';
 import GET_REPO_INFO from '../lib/graphqlQuery';
 import { ApolloProvider } from 'react-apollo';
 import { Query } from "react-apollo";
