@@ -88,7 +88,7 @@ const Skills = () => {
             Level 3
           </Typography>
           <Typography variant="h6" component="p" color="textSecondary">
-            アプリケーション開発のために、十分に活用できる
+            自由にアプリケーション開発できる
           </Typography>
           <SkillList skillList={level3List} />
         </Paper>
@@ -99,7 +99,7 @@ const Skills = () => {
             Level 2
           </Typography>
           <Typography variant="h6" component="p" color="textSecondary">
-            業務で使用した経験があるが、さらなる習熟が必要
+            実際の業務経験あり
           </Typography>
           <SkillList skillList={level2List} />
         </Paper>
