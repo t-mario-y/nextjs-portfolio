@@ -11,6 +11,12 @@ const profilePageStyles = makeStyles(theme => ({
   textContent: {
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(1)
+  },
+  title: { //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "calc(2rem + 4px)"
+    },
+    textAlign: "center"
   }
 }));
 
@@ -19,7 +25,7 @@ const Profile = () => {
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
           友井 義明 / t-mario-y
         </Typography>
       </Container>
@@ -34,6 +40,11 @@ const Profile = () => {
           <Link href="/career" className={classes.link}>
             職務経歴はこちら
           </Link>
+        </Typography>
+        <Typography variant="h6" component="p" gutterBottom>
+        <Link href="https://chrome.google.com/webstore/detail/koupen-wirw/pmoimalmgfkkgjoigdggphckiedpeego" target="#" className={classes.link}>
+          Chrome拡張"koupen-wirw"(限定公開)
+        </Link>
         </Typography>
       </Container>
       <Container maxWidth="lg" className={classes.textContent}>

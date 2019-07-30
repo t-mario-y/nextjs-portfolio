@@ -7,6 +7,12 @@ import Typography from '@material-ui/core/Typography';
 const careerPageStyles = makeStyles(theme => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
+  },
+  title: { //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "calc(2rem + 4px)"
+    },
+    textAlign: "center"
   }
 }));
 
@@ -60,7 +66,7 @@ const Career = () => {
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
           職務経歴
         </Typography>
       </Container>

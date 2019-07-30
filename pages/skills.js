@@ -19,6 +19,12 @@ const skillPageStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     paddingBottom: theme.spacing(1),
+  },
+  title: { //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "calc(2rem + 4px)"
+    },
+    textAlign: "center"
   }
 }));
 
@@ -78,7 +84,7 @@ const Skills = () => {
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
           技術スキル
         </Typography>
       </Container>

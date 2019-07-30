@@ -10,10 +10,9 @@ import { ApolloProvider } from 'react-apollo';
 import { Query } from "react-apollo";
 
 const repositoryListStyles = makeStyles(theme => ({
-  hoge: {
+  content: {
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-    textAlign: "center"
+    paddingBottom: theme.spacing(1)
   }
 }));
 
@@ -21,37 +20,45 @@ const repositoriesPageStyles = makeStyles(theme => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
+  title: { //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "calc(2rem + 4px)"
+    },
+    textAlign: "center"
+  }
 }));
 
 const RepositoryList = () => {
   const classes = repositoryListStyles();
   return (
-  <ApolloProvider client={MyApolloClient}>
-    <Query query={GET_REPO_INFO}>
-      {({ loading, error, data }) => {
-        if(error){
+    <ApolloProvider client={MyApolloClient}>
+      <Query query={GET_REPO_INFO}>
+        {({ loading, error, data }) => {
+          if(error){
+            return (
+              <Container className={classes.content} maxWidth="lg">
+                <Typography variant="h6" component="p" align="center">
+                  リポジトリ情報の取得に失敗しました。
+                </Typography>
+              </Container>
+            );
+          }
+          if (loading){
+            return (
+              <Container className={classes.content} align="center" maxWidth="lg">
+                <CircularIndeterminate />
+              </Container>
+            );
+          }
+          const repositories = data.user.repositories.nodes;
           return (
-            <Container className={classes.hoge} maxWidth="lg">
-              <Typography variant="h6" component="p">
-                リポジトリ情報の取得に失敗しました。
-              </Typography>
+            <Container className={classes.content} maxWidth="lg">
+              <RepositoryCardAlbum repositories ={repositories} />
             </Container>
           );
-        }
-        if (loading){
-          return (
-            <Container className={classes.hoge} maxWidth="lg">
-              <CircularIndeterminate />
-            </Container>
-          );
-        }
-        const repositories = data.user.repositories.nodes;
-        return (
-          <RepositoryCardAlbum repositories ={repositories} />
-        );
-      }}
-    </Query>
-  </ApolloProvider>
+        }}
+      </Query>
+    </ApolloProvider>
 )};
 
 const Repositories = () => {
@@ -59,7 +66,7 @@ const Repositories = () => {
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
           GitHub Repository
         </Typography>
       </Container>
