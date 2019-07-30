@@ -1,27 +1,26 @@
 # nextjs-portfolio
-next.jsで作ったportfolio site
+next.jsで作ったポートフォリオ
 
 https://nextjs-portfolio.t-mario-y.now.sh/
 
 ## 使用技術
 ### [Next.js](https://nextjs.org/)
 Reactを使用して、Webページ/アプリケーションを開発するためのフレームワーク
-### [react-apollo](https://www.npmjs.com/package/react-apollo)
-Reactで使用できるGraphQLライブラリ
+### [Apollo GraphQL](https://www.apollographql.com/)
+Reactで使用できるGraphQLクライアント
 ### [Material-UI](https://material-ui.com/)
 ReactのUI Components
 ### [Now](https://zeit.co/now)
-Node.jsプロジェクトをホスティングできるPaaS
+Next.jsプロジェクト等をホスティングできるPaaS
 
-## なぜNext.jsか
-「ポートフォリオサイトをReactを使って構築したい」というモチベーションが先にあった。  
-Reactを触った経験がなく、ある程度乗っかれるフレームワークを探していた。  
+## Next.jsの選定理由
+「Reactを使ってポートフォリオサイトを構築したい」というモチベーションが先にあったが、  
+これまでReactを触った経験がなく、ある程度乗っかれるフレームワークを探していた。  
 GitHub API v4(GraphQL)を使いつつも、SPAというよりはWebページとして作成したかった。  
 上記を踏まえたうえで、GatsbyかNext.jsで迷ったが、[ちょうど7月にNext.js 9が出ていて](https://nextjs.org/blog/next-9)タイミングが良かったので、こちらを触ってみることにした。  
+Next.jsはNowと連携しており、デプロイ先に悩まなくて済むのもメリットだった。  
 
-Next.jsはNowと連携しており、デプロイ先に悩まなくて済むのもメリット。  
-
-## 始め方
+## ローカルでの始め方
 ```
 git clone https://github.com/t-mario-y/nextjs-portfolio
 cd nextjs-portfolio
@@ -30,7 +29,7 @@ npm install
 npm run dev
 ```
 
-## デプロイ
+## nowへデプロイ
 ```
 touch now.json
 now
@@ -43,12 +42,24 @@ Next.jsの立ち上げとnowデプロイは始めやすく、ほぼゼロコン�
 
 ## 各技術について
 ### Next.js
-[公式のGetting Started](https://nextjs.org/learn/basics/getting-started/setup)に沿って学習した後に、このリポジトリを作成した。  
+[公式のGetting Started](https://nextjs.org/learn/basics/getting-started/setup)に沿って学習した後に、こちらを作成した。  
 
 ### GraphQL
-[GitHub GraphQL API Explorer](https://developer.github.com/v4/explorer/)でクエリを作成した。  
-Reactに繋ぐためのクライアントはapollo回り(react-apollo, apollo-client)  
+[GitHub GraphQL API Explorer](https://developer.github.com/v4/explorer/)でクエリを試せるのが助かった。  
+react-apollo + apollo-boostを使うと、少ないコード量でNext.jsに組み込むことができた。  
+このサイトがとても参考になった:  
+[Apollo Client + React 入門](https://qiita.com/seya/items/e1d8e77352239c4c4897)
 
 ### Now
-別途にaliasを設定しなくとも、デプロイ結果のURLが良い感じに分かりやすいのでそのまま使用している。  
-内部的にはビルド毎に異なるURLが割り当てられており、最新のビルドが固定URLに向けられている模様。  
+別途にaliasを設定しなくとも、デプロイ結果のURLが良い感じに分かりやすいので、そのまま使用している。  
+内部的にはビルド毎に異なるURLが割り当てられており、固定URLは最新のビルドへ向けられている模様。  
+
+### Material-UI
+あまり凝ったことはしていないが、GitHub APIコール中のCircularProgressや、固定ヘッダ(App Bar)をさくっと作れたり、楽させてもらった。  
+Media QueryもJavaScriptで実装するのが、初見では取っ付きづらかった。  
+[Media queries in React for responsive design - Material-UI](https://material-ui.com/components/use-media-query/)  
+
+## やり残したこと
+ - Next.js 9でTypeScriptとの親和性がより上がったようだが、試せなかった。
+ - Apollo Clientでクエリ取得結果をキャッシュしたかったが、[apollo-boostからのマイグレーション](https://www.apollographql.com/docs/react/advanced/boost-migration/)が大変で実現しなかった。
+   - サイトにアクセスしたときの応答速度が許容範囲に収まっているため。
