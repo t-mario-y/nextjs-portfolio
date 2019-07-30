@@ -4,7 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 
-const SkillList = ({skillList}) => {
+const SkillList = ({ skillList }) => {
   const dense = false;
   return(
     <Grid container>

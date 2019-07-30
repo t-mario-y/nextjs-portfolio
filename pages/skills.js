@@ -1,6 +1,6 @@
 import MyLayout from '../components/MyLayout';
-import SkillList from '../components/SkillList'
-
+import SkillList from '../components/SkillList';
+import skillData from '../contents/skillData';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -28,57 +28,6 @@ const skillPageStyles = makeStyles(theme => ({
   }
 }));
 
-const level3List = [
-  {
-    name: "Java"
-  },
-  {
-    name: "JavaScript"
-  },
-  {
-    name: "jQuery"
-  },
-  {
-    name: "Oracle DB"
-  }
-];
-
-const level2List = [
-  {
-    name: "Seasar2"
-  },
-  {
-    name: "Vue.js"
-  },
-  {
-    name: "CSS"
-  },
-  {
-    name: "BootStrap"
-  },
-  {
-    name: "PowerShell"
-  }
-];
-
-const level1List = [
-  {
-    name: "React"
-  },
-  {
-    name: "Next.js"
-  },
-  {
-    name: "Google Apps Script"
-  },
-  {
-    name: "Spring Boot"
-  },
-  {
-    name: "Progressive Web Apps"
-  }
-];
-
 const Skills = () => {
   const classes = skillPageStyles();
   return (
@@ -96,7 +45,7 @@ const Skills = () => {
           <Typography variant="h6" component="p" color="textSecondary">
             自由にアプリケーション開発できる
           </Typography>
-          <SkillList skillList={level3List} />
+          <SkillList skillList={skillData.level3List} />
         </Paper>
       </Container>
       <Container maxWidth="lg" className={classes.textContent}>
@@ -107,7 +56,7 @@ const Skills = () => {
           <Typography variant="h6" component="p" color="textSecondary">
             実際の業務経験あり
           </Typography>
-          <SkillList skillList={level2List} />
+          <SkillList skillList={skillData.level2List} />
         </Paper>
       </Container>
       <Container maxWidth="lg" className={classes.textContent}>
@@ -118,7 +67,7 @@ const Skills = () => {
           <Typography variant="h6" component="p" color="textSecondary">
             興味を持ち、個人開発で使用している
           </Typography>
-          <SkillList skillList={level1List} />
+          <SkillList skillList={skillData.level1List} />
         </Paper>
       </Container>
     </MyLayout>

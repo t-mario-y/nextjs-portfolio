@@ -1,5 +1,5 @@
 import MyLayout from '../components/MyLayout';
-import works from '../src/works';
+import worksData from '../contents/worksData';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -70,7 +70,7 @@ const Career = () => {
           職務経歴
         </Typography>
       </Container>
-      {works.map((work, idx) => (
+      {worksData.map((work, idx) => (
         <WorkSection key={idx} workObj={work}/>
       ))}
     </MyLayout>
