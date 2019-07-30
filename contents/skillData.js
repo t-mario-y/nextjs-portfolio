@@ -9,7 +9,7 @@ const skillData = {
     { name: "Seasar2" },
     { name: "Vue.js" },
     { name: "CSS" },
-    { name: "BootStrap" },
+    { name: "Bootstrap" },
     { name: "PowerShell" }
   ],
   level1List: [

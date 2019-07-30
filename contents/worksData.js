@@ -60,7 +60,7 @@ const worksData = [
     techStuck: [
       "Java(Seasar2)",
       "JavaScript(jQuery)",
-      "BootStrap"
+      "Bootstrap"
     ],
     team: [
       "チーム:4名",
