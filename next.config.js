@@ -1,5 +1,6 @@
-const path = require('path')
-const Dotenv = require('dotenv-webpack')
+//.envファイルの変数を読み込み
+const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   webpack: config => {
@@ -17,4 +18,13 @@ module.exports = {
 
     return config
   }
-}
+};
+
+//markdown変換
+const withMDX = require('@next/mdx')({
+  extension: /\.(md|mdx)$/,
+});
+
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'mdx']
+});
