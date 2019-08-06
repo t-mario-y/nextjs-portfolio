@@ -1,3 +1,13 @@
+//markdown変換
+const withMDX = require('@next/mdx')({
+  extension: /\.(md|mdx)$/,
+});
+//これを後に書くとdotenvが失敗する on Win10
+//TODO:そもそもmodule.exports が2箇所あるほうが変。
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'mdx']
+});
+
 //.envファイルの変数を読み込み
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
@@ -19,12 +29,3 @@ module.exports = {
     return config
   }
 };
-
-//markdown変換
-const withMDX = require('@next/mdx')({
-  extension: /\.(md|mdx)$/,
-});
-
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'mdx']
-});
