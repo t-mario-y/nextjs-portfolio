@@ -1,23 +1,24 @@
-import MyLayout from '../components/MyLayout';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import MyLayout from "../components/MyLayout";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 
-const profilePageStyles = makeStyles(theme => ({
+const profilePageStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
   textContent: {
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1)
+    paddingBottom: theme.spacing(1),
   },
-  title: { //スマホ縦画面で見出しが折り返すのを防止
-    [theme.breakpoints.down('xs')]: {
-      fontSize: "calc(2rem + 4px)"
+  title: {
+    //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "calc(2rem + 4px)",
     },
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 }));
 
 const Profile = () => {
@@ -25,7 +26,13 @@ const Profile = () => {
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
+        <Typography
+          variant="h3"
+          component="h1"
+          className={classes.title}
+          color="textPrimary"
+          gutterBottom
+        >
           友井 義明 / t-mario-y
         </Typography>
       </Container>
@@ -42,9 +49,13 @@ const Profile = () => {
           </Link>
         </Typography>
         <Typography variant="h6" component="p" gutterBottom>
-        <Link href="https://chrome.google.com/webstore/detail/koupen-wirw/pmoimalmgfkkgjoigdggphckiedpeego" target="#" className={classes.link}>
-          Chrome拡張"koupen-wirw"(限定公開)
-        </Link>
+          <Link
+            href="https://chrome.google.com/webstore/detail/koupen-wirw/pmoimalmgfkkgjoigdggphckiedpeego"
+            target="#"
+            className={classes.link}
+          >
+            Chrome拡張"koupen-wirw"(限定公開)
+          </Link>
         </Typography>
       </Container>
       <Container maxWidth="lg" className={classes.textContent}>
@@ -55,10 +66,14 @@ const Profile = () => {
           2008年より、複数のアカペラコーラスグループで継続的に活動。
         </Typography>
         <Typography variant="h6" gcomponent="p" gutterBottom>
-          <Link href="http://festival.tcmc.org.tw/2016#625" target="#">2016 TCMC a cappella competition</Link>をはじめ、複数の国際大会で入賞経験あり。
+          <Link href="http://festival.tcmc.org.tw/2016#625" target="#">
+            2016 TCMC a cappella competition
+          </Link>
+          をはじめ、複数の国際大会で入賞経験あり。
         </Typography>
       </Container>
     </MyLayout>
-)};
+  );
+};
 
 export default Profile;
