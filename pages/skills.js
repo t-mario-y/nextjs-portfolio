@@ -1,18 +1,18 @@
-import MyLayout from '../components/MyLayout';
-import SkillList from '../components/SkillList';
-import skillData from '../contents/skillData';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import MyLayout from "../components/MyLayout";
+import SkillList from "../components/SkillList";
+import skillData from "../contents/skillData";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
-const skillPageStyles = makeStyles(theme => ({
+const skillPageStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
   textContent: {
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1)
+    paddingBottom: theme.spacing(1),
   },
   paperRoot: {
     paddingTop: theme.spacing(3),
@@ -20,12 +20,13 @@ const skillPageStyles = makeStyles(theme => ({
     paddingRight: theme.spacing(3),
     paddingBottom: theme.spacing(1),
   },
-  title: { //スマホ縦画面で見出しが折り返すのを防止
-    [theme.breakpoints.down('xs')]: {
-      fontSize: "calc(2rem + 4px)"
+  title: {
+    //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "calc(2rem + 4px)",
     },
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 }));
 
 const Skills = () => {
@@ -33,7 +34,13 @@ const Skills = () => {
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
+        <Typography
+          variant="h3"
+          component="h1"
+          className={classes.title}
+          color="textPrimary"
+          gutterBottom
+        >
           技術スキル
         </Typography>
       </Container>
@@ -71,6 +78,7 @@ const Skills = () => {
         </Paper>
       </Container>
     </MyLayout>
-)};
+  );
+};
 
 export default Skills;

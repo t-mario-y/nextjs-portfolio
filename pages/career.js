@@ -1,26 +1,27 @@
-import MyLayout from '../components/MyLayout';
-import worksData from '../contents/worksData';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import MyLayout from "../components/MyLayout";
+import worksData from "../contents/worksData";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 
-const careerPageStyles = makeStyles(theme => ({
+const careerPageStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
-  title: { //スマホ縦画面で見出しが折り返すのを防止
-    [theme.breakpoints.down('xs')]: {
-      fontSize: "calc(2rem + 4px)"
+  title: {
+    //スマホ縦画面で見出しが折り返すのを防止
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "calc(2rem + 4px)",
     },
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 }));
 
-const workSectionStyles = makeStyles(theme => ({
+const workSectionStyles = makeStyles((theme) => ({
   textContent: {
     paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(2)
-  }
+    paddingBottom: theme.spacing(2),
+  },
 }));
 
 const WorkSection = ({ workObj }) => {
@@ -36,7 +37,7 @@ const WorkSection = ({ workObj }) => {
       <Typography variant="h6" component="h3" gutterBottom>
         業務内容
       </Typography>
-      {workObj.about.map(line => (
+      {workObj.about.map((line) => (
         <Typography key={line} variant="body1" component="p" gutterBottom>
           {line}
         </Typography>
@@ -44,7 +45,7 @@ const WorkSection = ({ workObj }) => {
       <Typography variant="h6" component="h3" gutterBottom>
         技術スタック
       </Typography>
-      {workObj.techStuck.map(tech => (
+      {workObj.techStuck.map((tech) => (
         <Typography key={tech} variant="body1" component="p" gutterBottom>
           - {tech}
         </Typography>
@@ -52,28 +53,35 @@ const WorkSection = ({ workObj }) => {
       <Typography variant="h6" component="h3" gutterBottom>
         職位
       </Typography>
-      {workObj.team.map(line => (
+      {workObj.team.map((line) => (
         <Typography key={line} variant="body1" component="p" gutterBottom>
           {line}
         </Typography>
       ))}
-     </Container>
+    </Container>
   );
-}
+};
 
 const Career = () => {
   const classes = careerPageStyles();
   return (
     <MyLayout>
       <Container maxWidth="lg" className={classes.heroContent}>
-        <Typography variant="h3" component="h1" className={classes.title} color="textPrimary" gutterBottom>
+        <Typography
+          variant="h3"
+          component="h1"
+          className={classes.title}
+          color="textPrimary"
+          gutterBottom
+        >
           職務経歴
         </Typography>
       </Container>
       {worksData.map((work, idx) => (
-        <WorkSection key={idx} workObj={work}/>
+        <WorkSection key={idx} workObj={work} />
       ))}
     </MyLayout>
-)};
+  );
+};
 
 export default Career;

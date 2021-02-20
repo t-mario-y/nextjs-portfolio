@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import Grid from '@material-ui/core/Grid';
+import { makeStyles } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import Grid from "@material-ui/core/Grid";
 
 const myAvatarStyles = makeStyles({
   avatar: {
@@ -14,8 +14,13 @@ const MyAvatar = () => {
   const classes = myAvatarStyles();
   return (
     <Grid container justify="center" alignItems="center">
-      <Avatar alt="t-mario-y" src="/static/avator.png" className={classes.avatar} />
+      <Avatar
+        alt="t-mario-y"
+        src="/static/avator.png"
+        className={classes.avatar}
+      />
     </Grid>
-)};
+  );
+};
 
 export default MyAvatar;
